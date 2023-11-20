@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\VehiclesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +26,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::prefix('dashboard/vehicles')->as('vehicles.')->group(function () {
+        Route::get('/create', [VehiclesController::class, 'create'])->name('create');
+        Route::get('/{vehicle}/edit', [VehiclesController::class, 'edit'])->name('edit');
+    });
 });
