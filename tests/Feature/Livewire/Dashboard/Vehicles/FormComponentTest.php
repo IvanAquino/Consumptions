@@ -2,6 +2,7 @@
 
 use App\Livewire\Dashboard\Vehicles\FormComponent;
 use App\Models\User;
+use App\Models\Vehicle;
 use Livewire\Livewire;
 
 it('shows the elements model, brand, year, color, plate, initial_mileage', function () {
@@ -27,7 +28,7 @@ it('shows model validation error', function () {
         ]);
 });
 
-it('creates new vehicle', function () {
+it('creates new vehicle and assigns initial_mileage to current_mileage', function () {
     $this->actingAs($user = User::factory()->withPersonalTeam()->create());
 
     Livewire::test(FormComponent::class)
@@ -57,5 +58,41 @@ it('creates new vehicle', function () {
         'initial_mileage' => 1000,
         'current_mileage' => 1000,
         'team_id' => $user->currentTeam->id,
+    ]);
+});
+
+it('Updates vehicle without change current mileage', function () {
+    $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+    $vehicle = Vehicle::factory()->create([
+        'team_id' => $user->currentTeam->id,
+        'current_mileage' => 9999,
+    ]);
+
+    Livewire::test(FormComponent::class, [
+        'vehicle' => $vehicle,
+    ])
+        ->set('form.model', 'New model')
+        ->set('form.brand', 'New brand')
+        ->set('form.year', 2020)
+        ->set('form.color', 'Red')
+        ->set('form.plate', 'ABC-123')
+        ->set('form.initial_mileage', 1000)
+        ->assertSet('form.model', 'New model')
+        ->assertSet('form.brand', 'New brand')
+        ->assertSet('form.year', 2020)
+        ->assertSet('form.color', 'Red')
+        ->assertSet('form.plate', 'ABC-123')
+        ->assertSet('form.initial_mileage', 1000)
+        ->call('save');
+
+    $this->assertDatabaseHas('vehicles', [
+        'id' => $vehicle->id,
+        'model' => 'New model',
+        'brand' => 'New brand',
+        'year' => '2020',
+        'color' => 'Red',
+        'plate' => 'ABC-123',
+        'initial_mileage' => 1000,
+        'current_mileage' => 9999,
     ]);
 });
