@@ -41,6 +41,13 @@
                             <a href="{{ route('vehicles.edit', $vehicle) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                                 {{ __('Edit') }}
                             </a>
+                            <button
+                                wire:click="delete({{ $vehicle->id }})"
+                                wire:confirm="Are you sure you want to delete this vehicle?"
+                                class="font-medium text-red-600 dark:text-red-500 hover:underline ml-2"
+                            >
+                                {{ __('Delete') }}
+                            </button>
                         </td>
                     </tr>
                 @endforeach

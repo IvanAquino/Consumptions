@@ -10,6 +10,14 @@ class VehiclesTable extends Component
 {
     use WithPagination;
 
+    public function delete($id): void
+    {
+        $vehicle = Vehicle::find($id);
+        if ($vehicle->team_id === auth()->user()->currentTeam->id) {
+            $vehicle->delete();
+        }
+    }
+
     public function render()
     {
         $vehicles = Vehicle::query()

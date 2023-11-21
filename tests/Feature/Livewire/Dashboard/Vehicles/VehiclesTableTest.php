@@ -50,3 +50,29 @@ it('shows relevant info of each vehicle', function () {
         ->assertDontSee($vehicle3->year)
         ->assertDontSee(number_format($vehicle3->current_mileage, 0));
 });
+
+it("doesn't delete vehicles that don't belong to the current team", function () {
+    $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+    $vehicle = Vehicle::factory()->create();
+
+    Livewire::test(VehiclesTable::class)
+        ->call('delete', $vehicle->id);
+
+    $this->assertDatabaseHas('vehicles', [
+        'id' => $vehicle->id,
+    ]);
+});
+
+it('deletes vehicles that belong to the current team', function () {
+    $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+    $vehicle = Vehicle::factory()->create([
+        'team_id' => $user->currentTeam->id,
+    ]);
+
+    Livewire::test(VehiclesTable::class)
+        ->call('delete', $vehicle->id);
+
+    $this->assertDatabaseMissing('vehicles', [
+        'id' => $vehicle->id,
+    ]);
+});
