@@ -43,7 +43,7 @@
                             </a>
                             <button
                                 wire:click="delete({{ $vehicle->id }})"
-                                wire:confirm="Are you sure you want to delete this vehicle?"
+                                wire:confirm="{{ __('Are you sure you want to delete this vehicle?') }}"
                                 class="font-medium text-red-600 dark:text-red-500 hover:underline ml-2"
                             >
                                 {{ __('Delete') }}

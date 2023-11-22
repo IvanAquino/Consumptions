@@ -50,7 +50,7 @@
                             </a>
                             <button
                                 wire:click="delete({{ $consumption->id }})"
-                                wire:confirm="Are you sure you want to delete this consumption?"
+                                wire:confirm="{{ __('Are you sure you want to delete this consumption?') }}"
                                 class="font-medium text-red-600 dark:text-red-500 hover:underline ml-2"
                             >
                                 {{ __('Delete') }}
