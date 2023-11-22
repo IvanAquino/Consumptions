@@ -3,7 +3,7 @@
         @foreach($consumptions as $consumption)
             <article id="{{ $consumption->id }}" class="mb-4">
                 <x-card class="px-4 py-2">
-                    <div class="grid gap-2 grid-cols-1 md:grid-cols-3">
+                    <div class="grid gap-2 grid-cols-2 md:grid-cols-3">
                         <div>
                             <x-label value="{{ __('Mileage') }}"/>
                             <p class="font-semibold dark:text-white">
@@ -44,9 +44,7 @@
                             </div>
                         @endif
 
-                        <div></div>
-                        <div></div>
-                        <div class="text-right">
+                        <div class="col-span-2 md:col-span-3 text-right">
                             <a href="{{ route('vehicles.consumptions.edit', [$vehicle, $consumption]) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                                 {{ __('Edit') }}
                             </a>

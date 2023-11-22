@@ -3,6 +3,7 @@
 namespace App\Livewire\Dashboard\Consumptions;
 
 use App\Models\Vehicle;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class ConsumptionsTable extends Component
@@ -11,6 +12,7 @@ class ConsumptionsTable extends Component
 
     public function delete($id)
     {
+        $vehicle = $this->vehicle;
         $consumption = $this->vehicle
             ->consumptions()
             ->find($id);
@@ -19,7 +21,22 @@ class ConsumptionsTable extends Component
             return;
         }
 
-        $consumption->delete();
+        DB::transaction(function () use ($consumption) {
+            $theresMoreConsumptions = $this->vehicle->consumptions()->count() > 1;
+            $latestConsumption = $this->vehicle->consumptions()->latest()->first();
+
+            if (! $theresMoreConsumptions) {
+                $this->vehicle->update([
+                    'current_mileage' => $this->vehicle->initial_mileage,
+                ]);
+            } elseif ($latestConsumption->id === $consumption->id) {
+                $this->vehicle->update([
+                    'current_mileage' => $consumption->previous_mileage,
+                ]);
+            }
+
+            $consumption->delete();
+        });
     }
 
     public function render()

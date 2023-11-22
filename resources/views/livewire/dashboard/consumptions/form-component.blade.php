@@ -10,6 +10,11 @@
             <div>
                 <x-label for="mileage" value="* {{ __('Mileage') }}" />
                 <x-input id="mileage" type="number" class="mt-1 block w-full" wire:model="form.mileage" />
+                @if(!$consumption)
+                    <div class="text-sm italic mt-1 font-semibold text-gray-500">
+                        {{ __('Current mileage') }} {{ $vehicle->current_mileage }}
+                    </div>
+                @endif
                 <x-input-error for="form.mileage" class="mt-2" />
             </div>
         </div>
