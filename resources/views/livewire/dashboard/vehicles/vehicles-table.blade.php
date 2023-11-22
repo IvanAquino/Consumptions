@@ -1,44 +1,44 @@
 <div>
-    <div class="relative overflow-x-auto shadow-md sm:rounded-md">
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                <tr>
-                    <th scope="col" class="px-6 py-3">
-                        {{ __('Model') }}
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        {{ __('Year') }}
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        {{ __('Brand') }}
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        {{ __('Current mileage') }}
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        {{ __('Actions') }}
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($vehicles as $vehicle)
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap dark:text-white">
-                            <a href="{{ route('vehicles.consumptions.index', $vehicle) }}" class="text-blue-600 dark:text-blue-500">
-                                {{ $vehicle->model }}
+    <section>
+        @foreach($vehicles as $vehicle)
+            <article class="mb-4">
+                <x-card class="px-4 py-4">
+                    <div class="grid gap-4 grid-cols-2 md:grid-cols-3">
+                        <div>
+                            <a href="{{ route('vehicles.consumptions.index', $vehicle) }}">
+                                <x-label value="{{ __('Model') }}" />
+                                <p class="font-semibold dark:text-white underline">
+                                    {{ $vehicle->model }}
+                                </p>
                             </a>
-                        </th>
-                        <td class="px-6 py-4">
-                            {{ $vehicle->year}}
-                        </td>
-                        <td class="px-6 py-4">
-                            {{ $vehicle->brand }}
-                        </td>
-                        <td class="px-6 py-4">
-                            {{ number_format($vehicle->current_mileage, 0) }} {{ __('MI') }}
-                        </td>
-                        <td class="px-6 py-4">
-                            <a href="{{ route('vehicles.edit', $vehicle) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                        </div>
+                        <div>
+                            <x-label value="{{ __('Year') }}" />
+                            <p class="font-semibold dark:text-white">
+                                {{ $vehicle->year }}
+                            </p>
+                        </div>
+                        <div>
+                            <x-label value="{{ __('Brand') }}" />
+                            <p class="font-semibold dark:text-white">
+                                {{ $vehicle->brand }}
+                            </p>
+                        </div>
+
+                        <div>
+                            <x-label value="{{ __('Current mileage') }}" />
+                            <p class="font-semibold dark:text-white">
+                                {{ $vehicle->current_mileage }}
+                            </p>
+                        </div>
+                        <div></div>
+                        <div></div>
+
+                        <div class="text-right col-span-2 md:col-span-3">
+                            <a href="{{ route('vehicles.consumptions.index', $vehicle) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                {{ __('Consumptions') }}
+                            </a>
+                            <a href="{{ route('vehicles.edit', $vehicle) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline ml-2">
                                 {{ __('Edit') }}
                             </a>
                             <button
@@ -48,12 +48,12 @@
                             >
                                 {{ __('Delete') }}
                             </button>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+                        </div>
+                    </div>
+                </x-card>
+            </article>
+        @endforeach
+    </section>
 
     <div class="mt-4">
         {!! $vehicles->links() !!}
