@@ -37,7 +37,7 @@ class FormComponent extends Component
         $this->validate();
         $this->form->store();
 
-        session()->flash('flash.banner', 'Yay it works!');
+        session()->flash('flash.banner', __('Vehicle saved successfully'));
         session()->flash('flash.bannerStyle', 'success');
 
         return to_route('dashboard');

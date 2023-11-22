@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\ConsumptionsController;
 use App\Http\Controllers\Dashboard\VehiclesController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,5 +31,11 @@ Route::middleware([
     Route::prefix('dashboard/vehicles')->as('vehicles.')->group(function () {
         Route::get('/create', [VehiclesController::class, 'create'])->name('create');
         Route::get('/{vehicle}/edit', [VehiclesController::class, 'edit'])->name('edit');
+
+        Route::prefix('{vehicle}/consumptions')->as('consumptions.')->group(function () {
+            Route::get('/', [ConsumptionsController::class, 'index'])->name('index');
+            Route::get('/create', [ConsumptionsController::class, 'create'])->name('create');
+            Route::get('/{consumption}/edit', [ConsumptionsController::class, 'edit'])->name('edit');
+        });
     });
 });

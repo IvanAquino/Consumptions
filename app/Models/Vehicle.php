@@ -33,4 +33,9 @@ class Vehicle extends Model
     {
         return new VehicleQueryBuilder($query);
     }
+
+    public function consumptions()
+    {
+        return $this->hasMany(Consumption::class);
+    }
 }
