@@ -10,7 +10,7 @@
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 @guest
                     <a type="button" href="{{ route('login') }}"
-                        class="font-semibold text-gray-800 dark:text-white hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:hover:bg-indigo-700 dark:focus:ring-indigo-800 mr-1">
+                        class="font-semibold text-gray-800 dark:text-white hover:text-white hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:hover:bg-indigo-700 dark:focus:ring-indigo-800 mr-1">
                         {{ __('Log in') }}
                     </a>
                     <a type="button" href="{{ route('register') }}"
@@ -47,13 +47,13 @@
 
 
         {{-- Features --}}
-        <section class="z-1">
+        <section class="mt-8">
             <h2 class="text-center font-semibold text-3xl dark:text-white mb-4">
                 {{ __('Features') }}
             </h2>
             <div class="grid gap-4 grid-cols-1 lg:grid-cols-2">
                 <div
-                    class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    class="p-6 bg-white border border-gray-200 rounded-lg shadow-smdark:bg-gray-800 dark:border-gray-700">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                         class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">
@@ -72,7 +72,7 @@
                 </div>
 
                 <div
-                    class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    class="p-6 bg-white border border-gray-200 rounded-lg shadow-smdark:bg-gray-800 dark:border-gray-700">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -91,7 +91,7 @@
                 </div>
 
                 <div
-                    class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    class="p-6 bg-white border border-gray-200 rounded-lg shadow-smdark:bg-gray-800 dark:border-gray-700">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -110,7 +110,7 @@
                 </div>
 
                 <div
-                    class="p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    class="p-6 bg-white border border-gray-200 rounded-lg shadow-smdark:bg-gray-800 dark:border-gray-700">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3">
                         <path stroke-linecap="round" stroke-linejoin="round"
