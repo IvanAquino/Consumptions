@@ -53,7 +53,7 @@
             </h2>
             <div class="grid gap-4 grid-cols-1 lg:grid-cols-2">
                 <div
-                    class="p-6 bg-white border border-gray-200 rounded-lg shadow-smdark:bg-gray-800 dark:border-gray-700">
+                    class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
                         class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">
@@ -72,7 +72,7 @@
                 </div>
 
                 <div
-                    class="p-6 bg-white border border-gray-200 rounded-lg shadow-smdark:bg-gray-800 dark:border-gray-700">
+                    class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -91,7 +91,7 @@
                 </div>
 
                 <div
-                    class="p-6 bg-white border border-gray-200 rounded-lg shadow-smdark:bg-gray-800 dark:border-gray-700">
+                    class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -110,7 +110,7 @@
                 </div>
 
                 <div
-                    class="p-6 bg-white border border-gray-200 rounded-lg shadow-smdark:bg-gray-800 dark:border-gray-700">
+                    class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-7 h-7 text-gray-500 dark:text-gray-400 mb-3">
                         <path stroke-linecap="round" stroke-linejoin="round"
