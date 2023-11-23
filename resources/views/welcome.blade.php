@@ -28,7 +28,7 @@
         </div>
     </nav>
 
-    <x-dashboard-container>
+    <div class="pt-24 pb-12 max-w-7xl mx-auto sm:px-6 lg:px-8">
         <section
             class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
             <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
@@ -129,5 +129,5 @@
                 </div>
             </div>
         </section>
-    </x-dashboard-container>
+    </div>
 </x-guest-layout>
