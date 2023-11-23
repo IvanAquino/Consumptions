@@ -10,7 +10,9 @@ class ConsumptionsController extends Controller
 {
     public function index(Vehicle $vehicle)
     {
-        return view('dashboard.consumptions.index', compact('vehicle'));
+        $hasConsumptions = $vehicle->consumptions()->exists();
+
+        return view('dashboard.consumptions.index', compact('vehicle', 'hasConsumptions'));
     }
 
     public function show(Consumption $consumption)

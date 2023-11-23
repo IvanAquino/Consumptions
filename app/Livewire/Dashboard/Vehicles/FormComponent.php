@@ -35,10 +35,14 @@ class FormComponent extends Component
     public function save()
     {
         $this->validate();
-        $this->form->store();
+        $vehicle = $this->form->store();
 
         session()->flash('flash.banner', __('Vehicle saved successfully'));
         session()->flash('flash.bannerStyle', 'success');
+
+        if (!$this->vehicle) {
+            return to_route('vehicles.consumptions.index', $vehicle);
+        }
 
         return to_route('dashboard');
     }

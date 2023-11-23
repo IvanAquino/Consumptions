@@ -24,18 +24,16 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [VehiclesController::class, 'index'])->name('dashboard');
 
     Route::prefix('dashboard/vehicles')->as('vehicles.')->group(function () {
         Route::get('/create', [VehiclesController::class, 'create'])->name('create');
-        Route::get('/{vehicle}/edit', [VehiclesController::class, 'edit'])->name('edit');
+        Route::get('/{vehicle}/edit', [VehiclesController::class, 'edit'])->name('edit')->middleware('can:accessToVehicle,vehicle');
 
         Route::prefix('{vehicle}/consumptions')->as('consumptions.')->group(function () {
-            Route::get('/', [ConsumptionsController::class, 'index'])->name('index');
-            Route::get('/create', [ConsumptionsController::class, 'create'])->name('create');
-            Route::get('/{consumption}/edit', [ConsumptionsController::class, 'edit'])->name('edit');
+            Route::get('/', [ConsumptionsController::class, 'index'])->name('index')->middleware('can:accessToVehicle,vehicle');
+            Route::get('/create', [ConsumptionsController::class, 'create'])->name('create')->middleware('can:accessToVehicle,vehicle');
+            Route::get('/{consumption}/edit', [ConsumptionsController::class, 'edit'])->name('edit')->middleware('can:accessToVehicle,vehicle');
         });
     });
 });

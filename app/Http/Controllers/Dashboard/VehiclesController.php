@@ -7,8 +7,18 @@ use App\Models\Vehicle;
 
 class VehiclesController extends Controller
 {
+    public function index()
+    {
+        $hasVehicles = Vehicle::query()
+            ->whereTeam(auth()->user()->currentTeam)
+            ->exists();
+
+        return view('dashboard', compact('hasVehicles'));
+    }
+
     public function create()
     {
+
         return view('dashboard.vehicles.create');
     }
 

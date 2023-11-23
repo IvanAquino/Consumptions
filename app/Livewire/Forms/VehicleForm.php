@@ -28,7 +28,7 @@ class VehicleForm extends Form
 
     public $current_mileage = null;
 
-    public function store()
+    public function store(): Vehicle
     {
         $data = $this->only(
             'model',
@@ -41,7 +41,13 @@ class VehicleForm extends Form
             'team_id'
         );
 
-        if (! $this->id) {
+        foreach ($data as $key => $value) {
+            if (empty($value)) {
+                unset($data[$key]);
+            }
+        }
+
+        if (!$this->id) {
             $data['current_mileage'] = $data['initial_mileage'];
         }
 

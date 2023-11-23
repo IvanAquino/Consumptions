@@ -12,10 +12,11 @@ class VehiclesTable extends Component
 
     public function delete($id): void
     {
-        $vehicle = Vehicle::find($id);
-        if ($vehicle->team_id === auth()->user()->currentTeam->id) {
-            $vehicle->delete();
-        }
+        $vehicle = Vehicle::query()
+            ->whereTeam(auth()->user()->currentTeam)
+            ->find($id);
+
+        $vehicle?->delete();
     }
 
     public function render()
