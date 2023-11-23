@@ -38,6 +38,7 @@
     "Comprehensive Vehicle Management": "Gestión integral de vehículos",
     "Confirm": "Confirmar",
     "Confirm Password": "Confirmar contraseña",
+    "Consumption saved successfully": "Consumo guardado exitosamente.",
     "Consumption Tracking": "Seguimiento de consumos",
     "Consumptions": "Consumos",
     "Create": "Crear",
@@ -50,7 +51,6 @@
     "Current mileage": "Kilometraje actual",
     "Current Password": "Contraseña actual",
     "Dashboard": "Panel",
-    "Delete": "Eliminar",
     "Delete": "Eliminar",
     "Delete Account": "Borrar cuenta",
     "Delete API Token": "Borrar token API",
@@ -149,6 +149,7 @@
     "Please copy your new API token. For your security, it won't be shown again.": "Por favor copie su nuevo token API. Por su seguridad, no se volverá a mostrar.",
     "Please enter your password to confirm you would like to logout of your other browser sessions across all of your devices.": "Por favor ingrese su contraseña para confirmar que desea cerrar las demás sesiones de otros navegadores en todos sus dispositivos.",
     "Please provide the email address of the person you would like to add to this team.": "Por favor proporcione la dirección de correo electrónico de la persona que le gustaría agregar a este equipo.",
+    "Previous mileage": "Kilometraje anterior",
     "Privacy Policy": "Política de Privacidad",
     "Profile": "Perfil",
     "Profile Information": "Información de perfil",
@@ -219,6 +220,7 @@
     "Token Name": "Nombre del token",
     "Too Many Attempts.": "Demasiados intentos",
     "Too Many Requests": "Demasiadas peticiones",
+    "Traveled distance": "Distancia recorrida",
     "Two Factor Authentication": "Autenticación de dos factores",
     "Two factor authentication is now enabled. Scan the following QR code using your phone's authenticator application.": "La autenticación de dos factores ahora está habilitada. Escanee el siguiente código QR usando la aplicación de autenticación de su teléfono.",
     "Unauthorized": "No autorizado",
@@ -228,6 +230,7 @@
     "Use a recovery code": "Use un código de recuperación",
     "Use an authentication code": "Use un código de autenticación",
     "Vehicle Registration": "Registro de vehículos",
+    "Vehicle saved successfully": "Vehículo guardado exitosamente.",
     "Vehicles": "Vehículos",
     "Verify Email Address": "Confirme su correo electrónico",
     "Verify Your Email Address": "Verifique su correo electrónico",
@@ -247,7 +250,5 @@
     "You may delete any of your existing tokens if they are no longer needed.": "Puede eliminar cualquiera de sus tokens existentes si ya no los necesita.",
     "You may not delete your personal team.": "No se puede borrar su equipo personal.",
     "You may not leave a team that you created.": "No se puede abandonar un equipo que usted creó.",
-    "Your email address is not verified.": "Su dirección de correo electrónico no está verificada.",
-    "Previous mileage": "Kilometraje anterior",
-    "Traveled distance": "Distancia recorrida"
+    "Your email address is not verified.": "Su dirección de correo electrónico no está verificada."
 }
