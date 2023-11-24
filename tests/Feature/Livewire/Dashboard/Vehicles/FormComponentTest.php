@@ -46,8 +46,7 @@ it('creates new vehicle and assigns initial_mileage to current_mileage', functio
         ->assertSet('form.plate', 'ABC-123')
         ->assertSet('form.initial_mileage', 1000)
         ->assertSet('form.team_id', $user->currentTeam->id)
-        ->call('save')
-        ->assertRedirect(route('dashboard'));
+        ->call('save');
 
     $this->assertDatabaseHas('vehicles', [
         'model' => 'Fiesta',

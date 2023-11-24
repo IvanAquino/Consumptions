@@ -28,7 +28,7 @@
                         <div>
                             <x-label value="{{ __('Current mileage') }}" />
                             <p class="font-semibold dark:text-white">
-                                {{ $vehicle->current_mileage }}
+                                {{ number_format($vehicle->current_mileage, 0) }}
                             </p>
                         </div>
                         <div></div>
