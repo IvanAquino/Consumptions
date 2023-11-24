@@ -9,6 +9,8 @@ Consumptions is a Laravel-based web application designed to efficiently manage v
 - Analyze cost efficiency of vehicles
 - Intuitive user interface with responsive design
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DMy1cSQZJHk?si=NHQRiaxSsz-S51L9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Installation Instructions
 
 ### Prerequisites
