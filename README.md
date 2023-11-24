@@ -72,6 +72,12 @@ yarn build
 bun run build
 ```
 
+## Roadmap
+
+- [x] Vehicles
+- [x] Consumptions
+- [ ] Images
+- [ ] Export reports
 
 ## Usage
 After installation, access the application through your web browser to start managing your vehicle data.
