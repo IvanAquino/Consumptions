@@ -42,7 +42,7 @@ class VehicleForm extends Form
         );
 
         foreach ($data as $key => $value) {
-            if (empty($value)) {
+            if (empty($value) && $value != 0) {
                 unset($data[$key]);
             }
         }

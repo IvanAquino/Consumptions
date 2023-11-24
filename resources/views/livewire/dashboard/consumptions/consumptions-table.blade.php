@@ -54,7 +54,7 @@
                             </div>
                         @endif
 
-                        <div class="col-span-2 md:col-span-1 text-sm font-semibold text-black" x-html="convertDateToUserTimezone()"></div>
+                        <div class="col-span-2 md:col-span-1 text-sm font-semibold text-black dark:text-gray-300" x-html="convertDateToUserTimezone()"></div>
 
                         <div class="col-span-2 md:col-span-2 text-right">
                             <a href="{{ route('vehicles.consumptions.edit', [$vehicle, $consumption]) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
