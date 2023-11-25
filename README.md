@@ -78,6 +78,8 @@ bun run build
 
 - [x] Vehicles
 - [x] Consumptions
+- [ ] Lang selector
+    - [ ] English metric system
 - [ ] Images
 - [ ] Export reports
 
